@@ -1,0 +1,27 @@
+*commenter.txt* Comment lines in a series of languages
+
+Author:  David Kristoffersen <david.alta2010@gmail.com>
+License: GPL (see LICENSE file)
+Version: 1.0
+
+BASIC USAGE										*commenter-usage*
+
+* Use the default leader `ct` to call the main function CommenterToggle
+* Execute :call [function] to execute any other functions
+
+COMMANDS										*commenter-commands*
+
+:call CommenterToggle			Toggle the comment on the current line
+:call CommenterGetComment		Requires an argument string of the language extention.
+								Echos the language comment type
+
+NOTES
+
+You can change and/or disable the default leader map.
+Locate the `DisableDefaultLeader` lable in `plugin/commenter.vim` and follow its instructions.
+
+ABOUT											*commenter-about*
+
+Find the latest version of commenter at:
+
+https://github.com/davidkristoffersen/vim-commenter

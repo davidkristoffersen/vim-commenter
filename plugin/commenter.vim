@@ -1,5 +1,5 @@
 " Author:		David Kristoffersen <david.alta2010@gmail.com>
-" Description:	Automatic line commenter
+" Description:	Comment lines in a series of languages
 " Version:		1.0
 
 " ------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ set cpo&vim
 
 " CommenterToggle: Echo comment type to language
 " CommenterGetComment: Toggle line comment
-" DefaultLeader: The default leader is 'ct'
+" DefaultLeader: The default leader is `ct`
 " DisableDefaultLeader: Comment out the if test below
 
 if !hasmapto('<Plug>CommenterToggle')
