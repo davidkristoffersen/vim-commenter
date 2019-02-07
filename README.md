@@ -8,21 +8,42 @@ Vim commenter is a vim plugin for automatically commenting a list of languages.
 
 ## Installation
 
-```sh
+```
 $ git clone https://github.com/davidkristoffersen/vim-commenter.git ~/.vim/bundle/vim-commenter
 ```
 
 ## Usage
 
-To be written.
+The main function is `CommenterToggle` and can be run in three ways:
+
+- Using the vim command line
+
+```
+: call CommenterToggle()
+```
+
+- Using the default leader map
+
+```vim
+<leader>ct
+```
+
+- Creating a custom leader map
+
+```
+$ vim ~/.vimrc
+```
+```vim
+nnoremap <leader>"Your-custom-map" :call CommenterToggle()
+```
 
 ## Testing
 
 Move to the following directory
 
-``sh
+```
 $ cd ~/.vim/bundle/vim-commenter/testing/
-``
+```
 
 Inside `testing` directory is a series of example language files located.  
 Open all files and test out the plugin using your configured `leader`.
