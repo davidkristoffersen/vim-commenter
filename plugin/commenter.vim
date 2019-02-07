@@ -103,7 +103,7 @@ fun! s:GetComment(lang)
 	\	['//',	'',		['c', 'java', 'javascript', 'cpp']],
 	\	['#',	'',		['python', 'sh', 'perl', 'ruby', 'r', 'asm', 'gitconfig', 'make']],
 	\	['--',	'',		['haskell', 'sql']],
-	\	['%',	'',		['matlab', 'tex']],
+	\	['%',	'',		['matlab', 'plaintex']],
 	\	['"',	'',		['vim']],
 	\	['(*',	'*)',	['pascal']],
 	\	["<!--",'-->',	['xml', 'html', 'php', 'markdown']],
