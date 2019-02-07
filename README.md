@@ -1,4 +1,4 @@
-# Vim-commenter plugin
+# commenter.vim
 
 Vim commenter is a vim plugin for automatically commenting a list of languages.
 
@@ -9,8 +9,7 @@ Vim commenter is a vim plugin for automatically commenting a list of languages.
 ## Installation
 
 ```sh
-$ cd ~/.vim/bundle/
-$ git clone https://github.com/davidkristoffersen/vim-commenter.git
+$ git clone https://github.com/davidkristoffersen/vim-commenter.git ~/.vim/bundle/vim-commenter
 ```
 
 ## Usage
@@ -28,13 +27,13 @@ $ cd ~/.vim/bundle/vim-commenter/testing/
 Inside `testing` directory is a series of example language files located.  
 Open all files and test out the plugin using your configured `leader`.
 
-``vim
+``sh
 $ vim -p *
 ``
 
 ## Authors
 
-* **David Kristoffersen** - *Initial work* - [cube_ai](https://github.com/davidkristoffersen)
+* **David Kristoffersen** - *Initial work* - [vim-commenter](https://github.com/davidkristoffersen)
 
 ## License
 
