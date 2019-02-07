@@ -8,6 +8,8 @@ Vim commenter is a vim plugin for automatically commenting a list of languages.
 
 ## Installation
 
+**Pathogen**
+
 ```
 $ git clone https://github.com/davidkristoffersen/vim-commenter.git ~/.vim/bundle/vim-commenter
 ```
