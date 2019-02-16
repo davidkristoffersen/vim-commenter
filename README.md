@@ -43,7 +43,7 @@ The main function is `CommenterToggle` and can be run in three ways:
 $ vim ~/.vimrc
 ```
 ```vim
-nnoremap <leader>"Your-custom-map" :call CommenterToggle()
+nnoremap <leader>"Your-custom-map" :call CommenterToggle()<cr>
 ```
 
 ## Testing
