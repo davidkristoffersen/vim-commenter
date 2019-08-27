@@ -22,9 +22,9 @@ set cpo&vim
 " DefaultLeader: The default leader is `ct`
 " DisableDefaultLeader: Comment out the if test below
 
-if !hasmapto('<Plug>CommenterToggle')
-	map <unique> <Leader>ct <Plug>CommenterToggle
-endif
+" if !hasmapto('<Plug>CommenterToggle')
+	" map <unique> <Leader>ct <Plug>CommenterToggle
+" endif
 
 " ------------------------------------------------------------------------------
 " Global Maps:
@@ -100,8 +100,8 @@ fun! s:GetComment(lang)
 	let ret_start = '\?'
 	let ret_end = ''
 	let cmnts = [
-	\	['//',	'',		['c', 'java', 'javascript', 'cpp']],
-	\	['#',	'',		['python', 'sh', 'perl', 'ruby', 'r', 'asm', 'gitconfig', 'make']],
+	\	['//',	'',		['c', 'java', 'javascript', 'cpp', 'javascript.jsx']],
+	\	['#',	'',		['python', 'sh', 'perl', 'ruby', 'r', 'asm', 'gitconfig', 'make', 'yaml']],
 	\	['--',	'',		['haskell', 'sql']],
 	\	['%',	'',		['matlab', 'plaintex']],
 	\	['"',	'',		['vim']],
