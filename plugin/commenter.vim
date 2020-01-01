@@ -101,7 +101,7 @@ fun! s:GetComment(lang)
 	let ret_end = ''
 	let cmnts = [
 	\	['//',	'',		['c', 'java', 'javascript', 'cpp', 'javascript.jsx', 'rust', 'cuda', 'cs']],
-	\	['#',	'',		['python', 'sh', 'perl', 'ruby', 'r', 'asm', 'gitconfig', 'make', 'yaml', 'i3', 'i3config']],
+	\	['#',	'',		['python', 'sh', 'perl', 'ruby', 'r', 'asm', 'gitconfig', 'make', 'yaml', 'i3', 'i3config', 'dosini', 'conf']],
 	\	['--',	'',		['haskell', 'sql']],
 	\	['%',	'',		['matlab', 'plaintex']],
 	\	['"',	'',		['vim']],
