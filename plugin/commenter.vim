@@ -33,6 +33,20 @@ noremap <silent> <unique> <script> <Plug>CommenterToggle
 	\ :set lz<CR>:call CommenterToggle()<CR>:set nolz<CR>
 
 " ------------------------------------------------------------------------------
+" Global variables
+
+let g:CommenterComments = [
+	\	['//',	'',		['c', 'java', 'javascript', 'cpp', 'rust', 'cuda', 'cs']],
+	\	['#',	'',		['python', 'sh', 'perl', 'ruby', 'r', 'asm', 'gitconfig', 'make', 'yaml', 'i3config', 'dosini', 'conf', 'xdefaults']],
+	\	['--',	'',		['haskell', 'sql']],
+	\	['%',	'',		['matlab', 'plaintex']],
+	\	['"',	'',		['vim']],
+	\	['(*',	'*)',	['pascal']],
+	\	["<!--",'-->',	['xml', 'html', 'php', 'markdown']],
+	\	['/*',	'*/',	['css']],
+	\]
+
+" ------------------------------------------------------------------------------
 " Global functions
 
 " Toggle line comment
@@ -46,7 +60,7 @@ fun! g:CommenterToggle()
 	redir END
 
 	" Set comment type
-	let s:cmnt_inses = s:GetComment(@a)
+	let s:cmnt_inses = s:CommenterGetCommentList(@a)
 	let s:cmnt_ins = s:cmnt_inses[0]
 	let s:cmnt_ins_end = s:cmnt_inses[1]
 	let s:cmnt_del = len(s:cmnt_ins)
@@ -81,7 +95,7 @@ endfun
 
 " Echo comment type to language
 fun! g:CommenterGetComment(lang)
-	let s:cmts = s:GetComment(a:lang)
+	let s:cmts = s:CommenterGetCommentList(a:lang)
 	let s:start = s:cmts[0]
 	let s:end = s:cmts[1]
 	if s:start != ''
@@ -92,32 +106,42 @@ fun! g:CommenterGetComment(lang)
 	endif
 endfun
 
+" Get comment type of current document
+fun! g:CommenterGetCommentList(...)
+	if a:0 == 1
+		return s:CommenterGetCommentList(a:1)
+	endif
+
+	let l:ft = &ft
+	return s:CommenterGetCommentList(l:ft)
+endfun
+
+fun! g:CommenterGetLanguages()
+	let l:ret = []
+	for l:lang_type in g:CommenterComments
+		for l:lang in l:lang_type[2]
+			call add(l:ret, l:lang)
+		endfor
+	endfor
+	return l:ret
+endfun
+
 " ------------------------------------------------------------------------------
 " Internal functions
 
 " Get comment type
-fun! s:GetComment(lang)
-	let ret_start = '\?'
-	let ret_end = ''
-	let cmnts = [
-	\	['//',	'',		['c', 'java', 'javascript', 'cpp', 'javascript.jsx', 'rust', 'cuda', 'cs']],
-	\	['#',	'',		['python', 'sh', 'perl', 'ruby', 'r', 'asm', 'gitconfig', 'make', 'yaml', 'i3', 'i3config', 'dosini', 'conf', 'xdefaults']],
-	\	['--',	'',		['haskell', 'sql']],
-	\	['%',	'',		['matlab', 'plaintex']],
-	\	['"',	'',		['vim']],
-	\	['(*',	'*)',	['pascal']],
-	\	["<!--",'-->',	['xml', 'html', 'php', 'markdown']],
-	\	['/*',	'*/',	['css']],
-	\]
-	for cmnt in cmnts
+fun! s:CommenterGetCommentList(lang)
+	let l:ret_start = '\?'
+	let l:ret_end = ''
+	for cmnt in g:CommenterComments
 		for l_val in cmnt[2]
 			if a:lang == l_val
-				let ret_start = cmnt[0]
-				let ret_end = cmnt[1]
+				let l:ret_start = cmnt[0]
+				let l:ret_end = cmnt[1]
 			endif
 		endfor
 	endfor
-	return [ret_start, ret_end]
+	return [l:ret_start, l:ret_end]
 endfun
 
 " ------------------------------------------------------------------------------
