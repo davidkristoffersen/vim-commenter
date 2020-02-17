@@ -37,7 +37,7 @@ noremap <silent> <unique> <script> <Plug>CommenterToggle
 
 let g:CommenterComments = [
 	\	['//',	'',		['c', 'java', 'javascript', 'cpp', 'rust', 'cuda', 'cs']],
-	\	['#',	'',		['python', 'sh', 'perl', 'ruby', 'r', 'asm', 'gitconfig', 'make', 'yaml', 'i3config', 'dosini', 'conf', 'xdefaults', 'readline']],
+	\	['#',	'',		['python', 'sh', 'perl', 'ruby', 'r', 'asm', 'gitconfig', 'make', 'yaml', 'i3config', 'dosini', 'conf', 'xdefaults', 'readline', 'cfg']],
 	\	['--',	'',		['haskell', 'sql']],
 	\	['%',	'',		['matlab', 'plaintex']],
 	\	['"',	'',		['vim']],
